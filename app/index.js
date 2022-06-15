@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import Popular from './components/Popular'
+import Battle from './components/Battle'
 
 import './index.css'
 
@@ -15,7 +16,7 @@ class App extends React.Component {
         return (
             // JSX vvv
             <div className='container'>
-                <Popular />
+                <Battle />
             </div>
             // JSX ^^^
             // Babel is needed to compile JSX into regular JavaScript invokations for browsers
