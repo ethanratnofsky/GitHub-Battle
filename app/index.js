@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-// Import CSS
+import Popular from './components/Popular'
+
 import './index.css'
 
 // Component
@@ -13,8 +14,8 @@ class App extends React.Component {
     render() {
         return (
             // JSX vvv
-            <div>
-                Hello World!
+            <div className='container'>
+                <Popular />
             </div>
             // JSX ^^^
             // Babel is needed to compile JSX into regular JavaScript invokations for browsers
