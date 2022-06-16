@@ -81,7 +81,8 @@ export default class Results extends React.Component {
         }
 
         return (
-            <div className='grid space-around container-sm'>
+            <>
+                <div className='grid space-around container-sm'>
                     <Card 
                         header={winner.score === loser.score ? 'Tie' : 'Winner'}
                         subheader={`Score: ${winner.score.toLocaleString()}`}
@@ -91,16 +92,24 @@ export default class Results extends React.Component {
                     >
                         <ProfileList profile={winner.profile} />
                     </Card>
-                <Card 
-                    header={winner.score === loser.score ? 'Tie' : 'Loser'}
-                    subheader={`Score: ${loser.score.toLocaleString()}`}
-                    avatar={loser.profile.avatar_url}
-                    href={loser.profile.html_url}
-                    name={loser.profile.login}
-                >
-                    <ProfileList profile={loser.profile} />
-                </Card>
-            </div>
+                    <Card 
+                        header={winner.score === loser.score ? 'Tie' : 'Loser'}
+                        subheader={`Score: ${loser.score.toLocaleString()}`}
+                        avatar={loser.profile.avatar_url}
+                        href={loser.profile.html_url}
+                        name={loser.profile.login}
+                    >
+                        <ProfileList profile={loser.profile} />
+                    </Card>
+                </div>
+                <button onClick={this.props.onReset} className='btn dark-btn btn-space'>Reset</button>
+            </>
         )
     }
+}
+
+Results.propTypes = {
+    playerOne: PropTypes.string.isRequired,
+    playerTwo: PropTypes.string.isRequired,
+    onReset: PropTypes.func.isRequired
 }
