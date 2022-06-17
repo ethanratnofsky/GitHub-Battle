@@ -16,6 +16,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "index_bundle.js",
+        publicPath: "/",
     },
     // plugins to inject
     plugins: [
@@ -26,4 +27,7 @@ module.exports = {
     ],
     // determine environment mode
     mode: process.env.NODE_ENV === "production" ? "production" : "development",
+    devServer: {
+      historyApiFallback: true,
+    },
 };
