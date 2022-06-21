@@ -16,16 +16,12 @@ import './index.css'
 // - *UI*
 
 class App extends React.Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            theme: 'light',
-            toggleTheme: () => {
-                this.setState(({ theme }) => ({
-                    theme: theme === 'light' ? 'dark' : 'light'
-                }))
-            }
+    state = {
+        theme: 'light',
+        toggleTheme: () => {
+            this.setState(({ theme }) => ({
+                theme: theme === 'light' ? 'dark' : 'light'
+            }))
         }
     }
     render() {
