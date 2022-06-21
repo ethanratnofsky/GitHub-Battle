@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin")
 
 module.exports = {
     // entry point of application
@@ -23,6 +24,11 @@ module.exports = {
         // generates index.html with script tag automatically inside the same directory as the bundle
         new HtmlWebpackPlugin({
             template: "app/index.html"
+        }),
+        new CopyPlugin({
+            patterns: [
+                { from: '_redirects' }
+            ]
         })
     ],
     // determine environment mode
